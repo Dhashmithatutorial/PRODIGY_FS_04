@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-Time Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- AUTH SCREEN -->
+<div class="auth-container" id="auth-container">
+    <h2 id="auth-title">Login</h2>
+
+    <input id="auth-username" placeholder="Username" />
+    <input id="auth-password" type="password" placeholder="Password" />
+
+    <button id="auth-action-btn">Login</button>
+
+    <p id="auth-toggle-text">
+        Don't have an account? <span id="auth-toggle-link">Register</span>
+    </p>
+
+    <p id="auth-message"></p>
+</div>
+
+<!-- JOIN SCREEN -->
+<div class="join-container" id="join-container" style="display:none;">
+    <h2 id="join-title">Join Chat Room</h2>
+
+    <input id="join-username" type="text" placeholder="Enter your name..." />
+    <input id="join-room" type="text" placeholder="Enter room name..." />
+
+    <button id="join-btn">Join Chat</button>
+</div>
+
+
+
+<!-- CHAT SCREEN -->
+<div class="chat-container" id="chat-container" style="display:none;">
+
+    <div class="chat-header">
+        <div class="header-left">
+            <button id="back-btn" style="display:none;">⬅</button>
+            <button id="users-toggle" class="mobile-only">👥</button>
+        </div>
+
+        <div class="header-center">
+            <h2>Chat Room</h2>
+            <div id="room-info"></div>
+        </div>
+
+        <div class="header-right">
+            <button id="theme-toggle">🌙</button>
+        </div>
+    </div>
+
+    <div class="chat-body">
+        <div class="users-panel">
+            <h3>Online Users</h3>
+            <ul id="users"></ul>
+        </div>
+
+        <div class="messages-panel">
+            <ul id="messages"></ul>
+
+            <form id="form">
+                <input id="input" autocomplete="off" placeholder="Type a message..." />
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
